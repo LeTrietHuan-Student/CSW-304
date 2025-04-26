@@ -1,0 +1,196 @@
+/* Header */
+.top-header {
+  background: black;
+  color: white;
+}
+
+.nav {
+  background-color: transparent;
+}
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav ul li {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.nav ul li a {
+  margin-top: 20px;
+  display: block;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: gray;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+}
+.nav ul li a:hover {
+  /* background-color: yellow; */
+  color: yellow;
+}
+.nav ul li ul.dropdown li{
+display: block;
+}
+
+.nav ul li ul.dropdown{
+width: 100%;
+position: absolute;
+z-index: 999;
+display: none;
+background-color: black;
+
+}
+
+.nav ul li:hover ul.dropdown{
+display: block;
+
+}
+.background {
+  background-image: url('slide-4.jpg');
+  background-size: cover;         
+  background-position: center;    
+  width: 100%;                    
+  height: 800px;                  
+  margin: 0;                      
+  padding: 0;
+}
+.img{
+    width: 100%;
+    max-width: 100%;
+}
+hr.thin-separator {
+  border: none;                   
+  border-top: 0.5px solid #ccc;     
+  margin: 0;                      
+}
+
+.overlay {
+  position: absolute;
+  /* canh ở giữa: */
+  transform: translate(-50%, -50%);
+
+  background: rgba(255, 255, 255, 0.6);  /* nền trắng mờ */
+  backdrop-filter: blur(0px);            /* làm mờ hậu cảnh sau khung (tuỳ chọn) */
+  
+  text-align: center;       /* canh chữ ở giữa khung */
+  font-family: "Times New Roman", Times, serif;
+}
+
+.overlay h1 {
+  margin: 0 0 10px;
+  font-size: 4.0rem;
+  color:rgb(191, 162, 77) ;
+
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.overlay-top {
+  top: 55%;
+  left:50%;
+  width: 750px;             
+  padding: 10px;
+}
+.overlay-bottom{
+  bottom:19%;
+  left:50%;
+  width: 900px;             
+  padding: 10px;
+}
+.promo-frame {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  align-content: center;
+}
+
+.promo-frame .promo-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.text-column {
+  margin-top: 30px;
+  flex: 1 1 350px;
+  padding: 10px;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  text-align: center;
+
+}
+
+.text-column h2 {
+  font-size: 1.85rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: grey;
+}
+.text-column h3 {
+  font-size: 1.5rem;
+  line-height: 0.8;
+  margin-bottom: 15px;
+  color: grey;
+}
+
+.text-column p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: grey;
+}
+
+.text-column button {
+  padding: 0.75em 1.5em;
+  border: 2px solid #D4AF37;
+  background: transparent;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  color:rgb(191, 162, 77) ;
+
+}
+.text-column button:hover {
+  background: #D4AF37;
+  color:#fff;
+
+}
+
+.image-column {
+  flex: 1 1 430px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-left: 50px;
+}
+.image-column img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Dịch vụ */
+.service-background{
+  max width: 1200px;
+  padding:20px ;
+  margin: 40px auto;
+  align-content: center ;
+  background: black;
+}
+.service-background .service-content{
+  display: flex;
+  flex-wrap: wrap;
+}
+.content-row{
+  text-align: center;
+  flex: 1 1. 350px;
+  padding: ;
+
+}
+
