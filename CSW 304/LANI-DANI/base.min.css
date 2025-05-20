@@ -13,7 +13,7 @@ header{
     z-index: 1000;
 }
 header ul{
-    list-style-type: none;
+    list-style-type: nonse;
     display: flex;
     margin: 15px 0;
 }
