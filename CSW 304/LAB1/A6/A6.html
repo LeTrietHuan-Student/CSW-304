@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="vow.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" type="text/css" href="vow.min.css">
     <title>Violet on Wednesday</title>
 </head>
 <body>
@@ -14,11 +13,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
-                        <p>&emsp; Hotline: <b>0968 159 239</b></p>
+                        <p><i class="fa-solid fa-phone"></i>  Hotline: <b>0968 159 239</b></p>
                     </div>
                     <div class="col-md-5">
-                        <i class="fa-solid fa-location-pin" style="color: #ffffff;"></i>
-                        <p> &emsp; Địa chỉ: <b>01 Nguyễn Cửu Vân, Bình Hạnh, TP.HCM </b></p>
+                        <p><i class="fa-solid fa-location-dot"></i>  Địa chỉ: <b>01 Nguyễn Cửu Vân, Bình Hạnh, TP.HCM </b></p>
                     </div>
                     <div class="col-md-4">
                         <p>&emsp; <b>Đăng nhập </b>hoặc <b>Tạo tài khoản mới</b></p>
@@ -28,15 +26,23 @@
         </div>
         <div class="mid-header">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
                         <img src="logo-1.png">
                     </div>
+                    <div class="col-md-1"></div>
                     <div class="col-md-3">
-                        <!-- search -->
+                        <form action="">
+                            <input type="text" name="Searching" placeholder="Tìm kiếm">
+                        </form>
                     </div>
                     <div class="col-md-3">
-                        <!-- shopping -->
+                        <div class="row"></div>
+                        <div class="col-md-4">
+                            <span class="shopping"> <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></span>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,16 +50,16 @@
 
         <div class="nav">
             <div class="container">
-                <ul style="color: white; font-weight: bold">
-                    <li>&emsp; TRANG CHỦ</li>
-                    <li>&emsp; HOA SINH NHẬT</li>
-                    <li>&emsp; HOA TÌNH YÊU </li>
-                    <li>&emsp; HOA CHÚC MỪNG </li>
-                    <li>&emsp; HOA VĂN PHÒNG </li>
-                    <li>&emsp; CHỦ ĐỀ </li>
-                    <li>&emsp; THIẾT KẾ </li>
-                    <li>&emsp; THỂ LOẠI </li>
-                    <li>&emsp; QUÀ TẶNG </li>
+                <ul style="color: white; font-weight: bold; font-size:5px;">
+                    <li><a href="">&emsp; TRANG CHỦ</a></li>
+                    <li><a href="">&emsp; HOA SINH NHẬT</a></li>
+                    <li><a href="">&emsp; HOA SINH NHẬT</a> </li>
+                    <li><a href="">&emsp; HOA CHÚC MỪNG </a></li>
+                    <li><a href="">&emsp; HOA VĂN PHÒNG </a></li>
+                    <li><a href="">&emsp; CHỦ ĐỀ</a> </li>
+                    <li><a href="">&emsp; THIẾT KẾ </a></li>
+                    <li><a href="">&emsp; THỂ LOẠI </a></li>
+                    <li><a href="">&emsp; QUÀ TẶNG </a></li>
                 </ul>
 
             </div>
@@ -64,16 +70,36 @@
         <section class="slider">
             <div class="container">
                 <div class=" row">
-                    <div class="col-md-8">
-                        <img class="slider"  src="Banner_large.png" width="730" style="margin-top: 20px;"> 
+                    <div class="col-md-12">
+                        <div id="carouselExampleIndicators" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                <img src="Banner_large.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="Banner_large.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="Banner_larg.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden"></span>
+                            </button>
+                        </div>
                     </div>
-                     <div class="col-md-4">
-                        <div class="stacked-container" style="position: relative; width: 100%; height: auto;">
-                        <img src="Banner_s1.png" class="stacked-image" style="width: 100%;   margin-top:20px; ">
-                        <img src="Banner_s2.png" class="stacked-image" style="margin-top: 25px; left: 0; width: 100%;">
                     </div>
                 </div>
-            </div>   
         </section>
     </nav>
     <main>
@@ -82,11 +108,9 @@
                 <div class="col-md-8 left-col">
                     <h1> SẢN PHẨM ƯA CHUỘNG</h1>
                     <div class="row">
-                        
                         <div class="col-md-3">
                             <div class="product-item">
                                 <img src="product.png">
-
                                 <h6>Khai trương hồng phát 2</h6>
                                 <dl>
                                     <dt>VS035</dt>
@@ -95,16 +119,18 @@
                                 </dl>
                             </div>
                         </div>
-
+                        
                         <div class="col-md-3">
                             <div class="product-item">
                                 <img src="product.png">
-
-                                <h6>Tình bền lâu</h6>
+                                <div class="content">
+                                     <h6>Tình bền lâu</h6>
                                 <dl>
                                     <dt>VS002</dt>
                                     <dd><p>300,500 đ</p></dd>
                                 </dl>
+                                </div>
+                               
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -183,9 +209,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-8 left-col">
                 <img src="ads.png" alt="">
                 </div>
-                
                 <div class="col-md-8 left-col">
                     <h1> SẢN PHẨM ƯA CHUỘNG</h1>
 
@@ -290,103 +317,13 @@
                                 </dl>
                             </div>
                         </div>
-                </div>  
-                
-                <div class="col-md-4 right-col">
-                    <div class="promotion-products">
-                        <!-- Heading block -->
-                        <h1><b> SẢN PHẨM KHUYẾN MÃI</b></h1>
-                        <!-- Dublicate the following block for each product -->
-
-                        <div class="row">
-                            <div class="col-md-3">
-                                <!-- Image -->
-                                <img src="product.png">
-                            </div>
-                            <div class="col-md-9">
-                                <!-- Other information -->
-                                    <h6>Khai trương hồng phát 2</h6>
-                                    <p><s>890,000 đ</s></p>
-                                    <p>807,500 đ</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-3">
-                                <!-- Image -->
-                                <img src="product.png">
-                            </div>
-                            <div class="col-md-9">
-                                <!-- Other information -->
-                                    <h6>Tình bền lâu</h6>
-                                    <p><s>450,000 đ </s></p>
-                                    <p>350,000 đ</p>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="promotion-products">
-                        <!-- Heading block -->
-                        <h1><b> SẢN PHẨM VỪA XEM </b></h1>
-                        <!-- Dublicate the following block for each product -->
-
-                        <div class="row">
-                            <div class="col-md-3">
-                                <!-- Image -->
-                                <img src="product.png">
-                            </div>
-                            <div class="col-md-9">
-                                <!-- Other information -->
-                                    <h6>Chúc mừng Tốt nghiệp</h6>
-                                    <p>350,000 đ</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-3">
-                                <!-- Image -->
-                                <img src="product.png">
-                            </div>
-                            <div class="col-md-9">
-                                <!-- Other information -->
-                                    <h6>Tình bền lâu</h6>
-                                    <p><s>450,000 đ</s> </p>
-                                    <p>350,000 đ</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="news">
-                        <h1> TIN TỨC </h1>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="side-news.png">
-                            </div>
-                            <div class="col-md-9">
-                                    <h6><b><a href=""> Hoa Tươi VOW khuyến mãi gói event tưng bừng</a></b></h6>
-                                    <p> 18/07/2015</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-3">
-                                <!-- Image -->
-                                <img src="news.png">
-                            </div>
-                            <div class="col-md-9">
-                                <!-- Other information -->
-                                    <h6><b><a href="">Ý nghĩa các loại hoa trong năm</a></b></h6>
-                                    <p> 17/07/2015</p>
-                            </div>
-                        </div>
-                    </div>
+                </div> 
+             <div class="col-md-8 left-col">
+                <div class="double-image">
+                    <img src="ads-1.png" alt="">
+                    <img src="ads-1.png" alt="">
                 </div>
-            </div>
-            
-        </div>
-        
-      
+             </div> 
     </main>
 
     <footer>
