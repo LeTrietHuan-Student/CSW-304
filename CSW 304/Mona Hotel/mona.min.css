@@ -32,40 +32,38 @@
   /* background-color: yellow; */
   color: yellow;
 }
-.nav ul li ul.dropdown li{
-display: block;
+.nav ul li ul.dropdown li {
+  display: block;
 }
 
-.nav ul li ul.dropdown{
-width: 100%;
-position: absolute;
-z-index: 999;
-display: none;
-background-color: black;
-
+.nav ul li ul.dropdown {
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  display: none;
+  background-color: black;
 }
 
-.nav ul li:hover ul.dropdown{
-display: block;
-
+.nav ul li:hover ul.dropdown {
+  display: block;
 }
 .background {
-  background-image: url('slide-4.jpg');
-  background-size: cover;         
-  background-position: center;    
-  width: 100%;                    
-  height: 800px;                  
-  margin: 0;                      
+  background-image: url("slide-4.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 800px;
+  margin: 0;
   padding: 0;
 }
-.img{
-    width: 100%;
-    max-width: 100%;
+.img {
+  width: 100%;
+  max-width: 100%;
 }
 hr.thin-separator {
-  border: none;                   
-  border-top: 0.5px solid #ccc;     
-  margin: 0;                      
+  border: none;
+  border-top: 0.5px solid #ccc;
+  margin: 0;
 }
 
 .overlay {
@@ -73,18 +71,17 @@ hr.thin-separator {
   /* canh ở giữa: */
   transform: translate(-50%, -50%);
 
-  background: rgba(255, 255, 255, 0.6);  /* nền trắng mờ */
-  backdrop-filter: blur(0px);            /* làm mờ hậu cảnh sau khung (tuỳ chọn) */
-  
-  text-align: center;       /* canh chữ ở giữa khung */
+  background: rgba(255, 255, 255, 0.6); /* nền trắng mờ */
+  backdrop-filter: blur(0px); /* làm mờ hậu cảnh sau khung (tuỳ chọn) */
+
+  text-align: center; /* canh chữ ở giữa khung */
   font-family: "Times New Roman", Times, serif;
 }
 
 .overlay h1 {
   margin: 0 0 10px;
-  font-size: 4.0rem;
-  color:rgb(191, 162, 77) ;
-
+  font-size: 4rem;
+  color: rgb(191, 162, 77);
 }
 
 .overlay p {
@@ -93,14 +90,14 @@ hr.thin-separator {
 }
 .overlay-top {
   top: 55%;
-  left:50%;
-  width: 750px;             
+  left: 50%;
+  width: 750px;
   padding: 10px;
 }
-.overlay-bottom{
-  bottom:19%;
-  left:50%;
-  width: 900px;             
+.overlay-bottom {
+  bottom: 19%;
+  left: 50%;
+  width: 900px;
   padding: 10px;
 }
 .promo-frame {
@@ -119,10 +116,9 @@ hr.thin-separator {
   margin-top: 30px;
   flex: 1 1 350px;
   padding: 10px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: #333;
   text-align: center;
-
 }
 
 .text-column h2 {
@@ -147,19 +143,17 @@ hr.thin-separator {
 
 .text-column button {
   padding: 0.75em 1.5em;
-  border: 2px solid #D4AF37;
+  border: 2px solid #d4af37;
   background: transparent;
   font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s;
-  color:rgb(191, 162, 77) ;
-
+  color: rgb(191, 162, 77);
 }
 .text-column button:hover {
-  background: #D4AF37;
-  color:#fff;
-
+  background: #d4af37;
+  color: #fff;
 }
 
 .image-column {
@@ -173,24 +167,31 @@ hr.thin-separator {
   height: auto;
   display: block;
 }
-
-
 /* Dịch vụ */
-.service-background{
-  max width: 1200px;
-  padding:20px ;
+.service-background {
+  max-width: 100%;
+  padding: 20px;
   margin: 40px auto;
-  align-content: center ;
-  background: black;
+  background-color: #000000;
 }
-.service-background .service-content{
+.service-background.service-content {
+  align-content: center;
   display: flex;
-  flex-wrap: wrap;
 }
-.content-row{
+.service-content h1 {
+  color: #d4af37;
   text-align: center;
-  flex: 1 1. 350px;
-  padding: ;
-
 }
-
+.service-content p {
+  color: #fff;
+  text-align: center;
+}
+.card-body p {
+  color: rgb(129, 129, 129);
+}
+.card-body h5 {
+  size: 100%;
+}
+.card-body {
+  text-align: center;
+}
