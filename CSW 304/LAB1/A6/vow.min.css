@@ -35,6 +35,12 @@
 .mid-header.col-md-3 {
   display: flex;
 }
+.input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
 .shopping {
   display: block;
   background-color: rgb(214, 76, 56);
@@ -42,6 +48,14 @@
   border: 1px solid rgb(214, 76, 56);
   text-align: center;
   padding: 10px 15px;
+  margin-left: 30px;
+}
+.card-body {
+  padding: none;
+  align-content: right;
+}
+.card-body h5 {
+  color: red;
 }
 .slider img {
   margin-bottom: 40px;
