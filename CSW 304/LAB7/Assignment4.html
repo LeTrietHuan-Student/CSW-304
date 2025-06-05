@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <main>
+      <table border="1" cellpadding="20" cellspacing="0">
+        <thead>
+          <th>str</th>
+          <th>parseInt(str)</th>
+          <th>parseFloat(str)</th>
+          <th>Number(str)</th>
+          <th>+str</th>
+          <th>str | 0</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1234</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1234abc</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>0.15</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>3.14ivan</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Infinity</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>99999999999999999999</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    const data = [
+      "1234",
+      "1234abc",
+      "0.15",
+      "3.14ivan",
+      "Infinity",
+      "99999999999999999999",
+    ];
+
+    const tbody = document.querySelector("tbody");
+
+    data.forEach((str, index) => {
+      const row = tbody.rows[index];
+      const values = [
+        parseInt(str),
+        parseFloat(str),
+        Number(str),
+        +str,
+        str | 0,
+      ];
+
+      values.forEach((val, i) => {
+        row.cells[i + 1].textContent = isNaN(val) ? "NaN" : val;
+      });
+    });
+  </script>
+</html>

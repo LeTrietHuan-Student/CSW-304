@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
+
+    <title>Fullscreen Overlay Navigation</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .w3-overlay {
+        cursor: pointer;
+      }
+      .open-cate {
+        display: flex;
+      }
+      .w3-sidebar {
+        background-color: blanchedalmond;
+        width: 400px;
+      }
+      #mySidebar {
+        left: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- sidebar-->
+      <div
+        class="w3-sidebar w3-bar-block w3-right"
+        id="mySidebar"
+        style="display: none; z-index: 5; right: 0"
+      >
+        <button class="w3-bar-item w3-button w3-xxlarge" onclick="w3_close()">
+          Close &times;
+        </button>
+        <a href="#" class="w3-bar-item w3-button">About</a>
+        <a href="#" class="w3-bar-item w3-button">Services</a>
+        <a href="#" class="w3-bar-item w3-button">Clients</a>
+        <a href="#" class="w3-bar-item w3-button">Contact</a>
+      </div>
+
+      <!-- overlay -->
+      <div class="w3-overlay" onclick="w3_close()" id="myOverlay"></div>
+      <div>
+        <div class="w3-container">
+          <h1>Fullscreen Overlay Navigation</h1>
+          <p>
+            Click on the element below to open the fullscreen overlay navigation
+            menu
+          </p>
+        </div>
+      </div>
+      <div class="open-cate">
+        <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">
+          &#9776;
+        </button>
+        <h1>open</h1>
+      </div>
+    </main>
+    <script>
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

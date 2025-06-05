@@ -95,6 +95,7 @@ hr.thin-separator {
   padding: 10px;
 }
 .overlay-bottom {
+  margin-top: 20px;
   bottom: 19%;
   left: 50%;
   width: 900px;

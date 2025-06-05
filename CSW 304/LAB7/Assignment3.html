@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 3: Auto-dismiss Alerts</title>
+    <style>
+      #alertContainer {
+        position: fixed;
+        top: 1em;
+        right: 1em;
+        width: 300px;
+        z-index: 9999;
+      }
+
+      .alert {
+        padding: 1rem;
+        margin-bottom: 0.5em;
+        border-radius: 4px;
+        color: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        opacity: 1;
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      }
+      .alert.hide {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      .alert-danger {
+        background-color: #e74c3c;
+      }
+      .alert-success {
+        background-color: #2ecc71;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showAlert('danger',  'Something went wrong!')">
+      Show Danger Alert
+    </button>
+
+    <button onclick="showAlert('success', 'Operation successful!')">
+      Show Success Alert
+    </button>
+    <div id="alertContainer"></div>
+
+    <script>
+      function showAlert(type, message) {
+        const container = document.getElementById("alertContainer");
+        const alert = document.createElement("div");
+
+        alert.classList.add("alert", `alert-${type}`);
+        alert.textContent = message;
+
+        container.appendChild(alert);
+
+        setTimeout(() => {
+          alert.classList.add("hide");
+        }, 4500);
+        setTimeout(() => {
+          alert.remove();
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>
