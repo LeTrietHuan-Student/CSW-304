@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Registration form </title>
+	<style>
+		table {
+			table-layout: fixed;
+			border-collapse: collapse;
+		}
+
+		td input[type="text"],
+		td input[type="password"],
+		td textarea {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.city {
+			width: 45% !important;
+		}
+
+		.state {
+			width: calc(100% - 45% - 43%) !important;
+		}
+
+		td select {
+			width: 30%;
+		}
+
+		.error {
+			color: #c00;
+			font-size: 0.9rem;
+			display: none;
+			margin-top: 4px;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<form id="registrationForm">
+			<table border="1" style="width: 600px;">
+				<colgroup>
+					<col span="1" width="25%">
+					<col span="1" width="65%">
+				</colgroup>
+				<tr>
+					<th>Full Name*</th>
+					<td>
+						<input type="text" id="fullName" required>
+						<div id="fullNameError" class="error">Full Name is required.</div>
+					</td>
+				</tr>
+				<tr>
+					<th>Email*</th>
+					<td>
+						<input type="text" id="email" required pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
+							placeholder="example@gmail.com">
+						<div id="emailError" class="error">Valid Gmail address is required.</div>
+					</td>
+				</tr>
+				<tr>
+					<th>Password <sup>*</sup></th>
+					<td>
+						<input type="password" id="password" required placeholder="Enter your password">
+						<div id="passwordError" class="error">Password is required.</div>
+					</td>
+				</tr>
+				<tr>
+					<th>Confirm Password <sup>*</sup></th>
+					<td>
+						<input type="password" id="confirmPassword" required placeholder="Enter your password again">
+						<div id="confirmPasswordError" class="error">Passwords do not match.</div>
+					</td>
+				</tr>
+				<tr>
+					<th>Phone Number<sup>*</sup></th>
+					<td>
+						<input type="text" id="phoneNumber" required placeholder="10-digit phone number">
+						<div id="phoneError" class="error">Phone number must be exactly 10 digits.</div>
+					</td>
+				</tr>
+				<tr>
+					<th>Address</th>
+					<td>
+						<textarea name="Content" placeholder="Enter your address" cols="50" rows="8"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<th>City</th>
+					<td>
+						<table>
+							<tr>
+								<td><input type="text" placeholder="Enter your City" name=""></td>
+								<td><b>State</b></td>
+								<td><input type="text" placeholder="Enter your State" name=""></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<th>Zip/Postal Code</th>
+					<td><input type="text" placeholder="Enter your Zip/Postal Code"></td>
+				</tr>
+				<tr>
+					<th>Country</th>
+					<td>
+						<select>
+							<option>[Select your country]</option>
+							<option>VietNam</option>
+							<option>China</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>Birthday</th>
+					<td><input type="text" placeholder="mm/dd/yyyy" name=""></td>
+				</tr>
+				<tr>
+					<th>Gender</th>
+					<td>
+						<select>
+							<option>Male</option>
+							<option>Female</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>Starting date</th>
+					<td>
+						<input type="radio" name="season" checked value="Spring" />Spring
+						<input type="radio" name="season" value="Summer" />Summer
+					</td>
+				</tr>
+				<tr>
+					<th>Comments</th>
+					<td>
+						<textarea name="Content" placeholder="Please send us more information" cols="50"
+							rows="8"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">
+						<input type="submit" value="Submit">
+					</th>
+				</tr>
+			</table>
+		</form>
+	</main>
+
+	<script>
+		document.getElementById('registrationForm').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const fullName = document.getElementById('fullName').value.trim();
+			const email = document.getElementById('email').value.trim();
+			const password = document.getElementById('password').value;
+			const confirmPwd = document.getElementById('confirmPassword').value;
+			const phoneRaw = document.getElementById('phoneNumber').value.trim();
+
+			const fullNameError = document.getElementById('fullNameError');
+			const emailError = document.getElementById('emailError');
+			const passwordError = document.getElementById('passwordError');
+			const confirmPasswordError = document.getElementById('confirmPasswordError');
+			const phoneError = document.getElementById('phoneError');
+
+			[fullNameError, emailError, passwordError, confirmPasswordError, phoneError].forEach(err => {
+				err.style.display = 'none';
+			});
+
+			let isValid = true;
+
+			if (fullName === '') {
+				fullNameError.textContent = 'Full Name is required.';
+				fullNameError.style.display = 'block';
+				isValid = false;
+			}
+
+			if (email === '' || !/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)) {
+				emailError.textContent = 'Valid Gmail address is required.';
+				emailError.style.display = 'block';
+				isValid = false;
+			}
+
+			if (password === '') {
+				passwordError.textContent = 'Password is required.';
+				passwordError.style.display = 'block';
+				isValid = false;
+			}
+
+			if (password !== '' && confirmPwd !== '' && password !== confirmPwd) {
+				confirmPasswordError.textContent = 'Passwords do not match.';
+				confirmPasswordError.style.display = 'block';
+				isValid = false;
+			}
+
+			if (phoneRaw === '') {
+				phoneError.textContent = 'Phone Number is required.';
+				phoneError.style.display = 'block';
+				isValid = false;
+			} else {
+				const phoneDigitsOnly = phoneRaw.replace(/\D/g, '');
+				if (phoneDigitsOnly.length !== 10) {
+					phoneError.textContent = 'Phone number must be exactly 10 digits.';
+					phoneError.style.display = 'block';
+					isValid = false;
+				}
+			}
+
+			if (isValid) {
+				console.log('Full Name:', fullName);
+				console.log('Email:', email);
+				console.log('Password:', password);
+				console.log('Phone Number:', phoneRaw.replace(/\D/g, ''));
+				alert('Validation passed. Form is ready to submit.');
+			}
+		});
+
+		document.getElementById('fullName').addEventListener('input', () => {
+			document.getElementById('fullNameError').style.display = 'none';
+		});
+		document.getElementById('email').addEventListener('input', () => {
+			document.getElementById('emailError').style.display = 'none';
+		});
+		document.getElementById('password').addEventListener('input', () => {
+			document.getElementById('passwordError').style.display = 'none';
+			document.getElementById('confirmPasswordError').style.display = 'none';
+		});
+		document.getElementById('confirmPassword').addEventListener('input', () => {
+			document.getElementById('confirmPasswordError').style.display = 'none';
+		});
+		document.getElementById('phoneNumber').addEventListener('input', () => {
+			document.getElementById('phoneError').style.display = 'none';
+		});
+	</script>
+</body>
+
+</html>
