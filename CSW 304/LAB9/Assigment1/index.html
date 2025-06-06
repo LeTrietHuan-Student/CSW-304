@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+      integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="asg1.css" />
+  </head>
+  <body>
+    <main>
+      <div class="top-gallery">
+        <div class="list" id="thumbnailList">
+          <img src="img1.jpg" alt="" />
+          <img src="img2.jpg" alt="" />
+          <img src="img3.jpg" alt="" />
+          <img src="img4.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="main-gallery" id="overlay">
+        <img src="img1.jpg" alt="" id="largeImage" />
+        <span id="closeBtn">
+          <i class="fa-solid fa-xmark fa-2x"></i>
+        </span>
+        <span>
+          <h3 id="caption">Northern Light</h3>
+        </span>
+      </div>
+    </main>
+
+    <script>
+      // Input du lieu
+      document.addEventListener("DOMContentLoaded", () => {
+        const thumbnails = document.querySelectorAll("#thumbnailList img");
+        const overlay = document.querySelector("#overlay");
+        const bigImg = document.querySelector("#largeImage");
+        const captionEl = document.querySelector("#caption");
+        const closeBtn = document.querySelector("#closeBtn");
+        let currentIndex = 0;
+        let intervalID = null;
+
+        function clearThumbnailBorders() {
+          thumbnails.forEach((t) => {
+            t.style.border = "2px solid transparent";
+          });
+        }
+
+        function showImage(i) {
+          currentIndex = (i + thumbnails.length) % thumbnails.length;
+          clearThumbnailBorders();
+          thumbnails[currentIndex].style.border = "2px solid #ff8800";
+
+          const newSrc = thumbnails[currentIndex].getAttribute("src");
+          bigImg.src = newSrc;
+          overlay.style.display = "flex";
+        }
+
+        function nextImage() {
+          showImage(currentIndex + 1);
+        }
+
+        function startAutoRotate() {
+          if (intervalID) {
+            clearInterval(intervalID);
+          }
+          intervalID = setInterval(nextImage, 5000);
+        }
+
+        function stopAutoRotate() {
+          if (intervalID) {
+            clearInterval(intervalID);
+            intervalID = null;
+          }
+        }
+
+        thumbnails.forEach((thumb, idx) => {
+          thumb.addEventListener("click", () => {
+            showImage(idx);
+            startAutoRotate();
+          });
+        });
+
+        closeBtn.addEventListener("click", () => {
+          overlay.style.display = "none";
+          clearThumbnailBorders();
+          stopAutoRotate();
+        });
+
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) {
+            overlay.style.display = "none";
+            clearThumbnailBorders();
+            stopAutoRotate();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
