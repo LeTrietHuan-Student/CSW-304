@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
-      integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+      integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
@@ -34,91 +34,151 @@
         border: 2px solid black;
         padding: 10px;
         height: 100vh;
-        width: 30%;
         overflow: auto;
-        max-width: 200px;
       }
-      .main-bar {
-        border: 2px solid black;
-        padding: 10px;
-        height: 100vh;
-        overflow: auto;
-        max-width: 100%;
-        width: 70%;
-        margin-left: 30px;
-      }
+
       .search {
         margin-top: 10px;
       }
+
       .header {
         padding: 5px;
         background-color: rgb(247, 247, 247);
         border-bottom: 1px solid gray;
       }
+
       .table {
         width: auto;
         margin: 20px 10px;
       }
+
       table {
         margin-top: 10px;
       }
+
       th,
       td {
         padding: 8px;
         text-align: left;
       }
+
       th {
         background-color: #f2f2f2;
       }
+
       .table button {
         margin: 3px;
         padding: 0;
       }
+
       .row {
         margin: 0 10px;
         padding: 0;
         display: flex;
-        box-sizing: border-box;
-      }
-      .input-form{
-        width: 100%;
-        
       }
     </style>
   </head>
 
   <body>
     <main>
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="sidebar">
-            <ul id="class-list">
-              <h1>Class List</h1>
-              <li>Lớp 1</li>
-              <li>Lớp 2</li>
-            </ul>
+          <div class="col-3">
+            <div class="sidebar">
+              <ul id="class-list">
+                <h1>Class List</h1>
+              </ul>
+            </div>
           </div>
-          <div class="main-bar">
-            <section class="input-form">
-                <div class="row">
-                    <h4>Edit student's Info </h1>
+          <div class="col-9">
+            <div class="sidebar">
+              <div class="card">
+                <div class="header">
+                  <p>Edit student's information</p>
                 </div>
-                <div class="row">
-                    <form action="">
-                        <input type="input" placeholder="2230">
-                        <input type="input" placeholder=" Nguyen Van A" id="">
-                        <input type="input" placeholder=" a@gmail.com">
-
-                    </form>
+                <div class="row g-2">
+                  <div class="col-2">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="id"
+                      placeholder="ID"
+                    />
+                  </div>
+                  <div class="col-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div class="col-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div class="col-2">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      id="menu"
+                    ></select>
+                  </div>
+                  <div class="col-2">
+                    <button
+                      type="submit"
+                      class="btn btn-primary mb-2"
+                      id="update"
+                    >
+                      Update
+                    </button>
+                  </div>
                 </div>
-            </section>
-            <section class="board">
-
-            </section>
+              </div>
+              <div class="search">
+                <div class="row">
+                  <div class="col-8"></div>
+                  <div class="col-4">
+                    <div class="input-group mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search"
+                        aria-label="Recipient’s username"
+                        aria-describedby="basic-addon2"
+                      />
+                      <button type="button" class="btn btn-primary">
+                        search
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="header">
+                  <p>Student List</p>
+                </div>
+                <table>
+                  <thead id="header"></thead>
+                  <tbody id="body"></tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+      integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script>
       $().ready(function () {
         let studentList;
@@ -137,7 +197,6 @@
         for (let item of list) {
         }
       }
-
       function getClass() {
         fetch("http://139.180.213.49/getdata-student.php?Type=Class")
           .then((response) => {
