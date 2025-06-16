@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+      integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin-left: 30px;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar {
+        border: 2px solid black;
+        padding: 10px;
+        height: 100vh;
+        width: 30%;
+        overflow: auto;
+        max-width: 200px;
+      }
+      .main-bar {
+        border: 2px solid black;
+        padding: 10px;
+        height: 100vh;
+        overflow: auto;
+        max-width: 100%;
+        width: 70%;
+        margin-left: 30px;
+      }
+      .search {
+        margin-top: 10px;
+      }
+      .header {
+        padding: 5px;
+        background-color: rgb(247, 247, 247);
+        border-bottom: 1px solid gray;
+      }
+      .table {
+        width: auto;
+        margin: 20px 10px;
+      }
+      table {
+        margin-top: 10px;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .table button {
+        margin: 3px;
+        padding: 0;
+      }
+      .row {
+        margin: 0 10px;
+        padding: 0;
+        display: flex;
+        box-sizing: border-box;
+      }
+      .input-form{
+        width: 100%;
+        
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="sidebar">
+            <ul id="class-list">
+              <h1>Class List</h1>
+              <li>Lớp 1</li>
+              <li>Lớp 2</li>
+            </ul>
+          </div>
+          <div class="main-bar">
+            <section class="input-form">
+                <div class="row">
+                    <h4>Edit student's Info </h1>
+                </div>
+                <div class="row">
+                    <form action="">
+                        <input type="input" placeholder="2230">
+                        <input type="input" placeholder=" Nguyen Van A" id="">
+                        <input type="input" placeholder=" a@gmail.com">
+
+                    </form>
+                </div>
+            </section>
+            <section class="board">
+
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      $().ready(function () {
+        let studentList;
+        $.get("http://139.180.213.49/getdata-student.php"),
+          {
+            Type: "Student",
+          },
+          function (data) {
+            console.log(data);
+            studentList = data;
+          },
+          "json";
+      });
+      function showStudentList() {
+        $("#student-list").empty();
+        for (let item of list) {
+        }
+      }
+
+      function getClass() {
+        fetch("http://139.180.213.49/getdata-student.php?Type=Class")
+          .then((response) => {
+            if (!response.ok) {
+              console.error("Error fetching data:", response.statusText);
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Data fetched successfully:", data);
+            const menu = document.getElementById("dropdown-menu");
+            data.forEach((classList) => {
+              const classItem = document.createElement("li");
+              classItem.innerHTML = `
+                        <a href="" class = "dropdown-item">${classList}</a>
+                    
+                    `;
+              menu.appendChild(classItem);
+            });
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+      getClass();
+    </script>
+  </body>
+</html>
